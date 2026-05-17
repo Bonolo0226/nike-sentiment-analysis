@@ -637,12 +637,16 @@ elif page == "📂 Dataset Explorer":
         st.markdown(f"<p class='section-label'>Full Dataset</p>", unsafe_allow_html=True)
         show_cols = [c for c in ["id","product","category","rating","date","Emoji","Sentiment","Polarity","Subjectivity","review"]
                      if c in df.columns]
-        styled = df[show_cols].style.applymap(
-            lambda v: f"color: #00C896; font-weight:600" if v == "Positive"
-                      else (f"color: #FF4560; font-weight:600" if v == "Negative"
-                            else f"color: #FEB019; font-weight:600"),
-            subset=["Sentiment"]
-        )
+        def _colour_sentiment(v):
+            if v == "Positive": return "color: #00C896; font-weight:600"
+            if v == "Negative": return "color: #FF4560; font-weight:600"
+            return "color: #FEB019; font-weight:600"
+
+        # pandas ≥2.1 renamed applymap → map; support both
+        try:
+            styled = df[show_cols].style.map(_colour_sentiment, subset=["Sentiment"])
+        except AttributeError:
+            styled = df[show_cols].style.applymap(_colour_sentiment, subset=["Sentiment"])
         st.dataframe(styled, use_container_width=True, height=380)
 
         # Download
