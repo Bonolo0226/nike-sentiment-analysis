@@ -1,4 +1,4 @@
-# 🔍 SentiView – AI Sentiment Analysis Dashboard
+# 🔍 NikeSenti – AI Sentiment Analysis Dashboard
 
 > **Week 3 Project · CAPACITI AI Bootcamp · April 2026**
 > Sentiment Analysis & Data Insights
