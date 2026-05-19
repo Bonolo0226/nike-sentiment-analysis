@@ -12,7 +12,7 @@
 
 ## 📖 Overview
 
-**SentiView** is a portfolio-quality, AI-powered sentiment analysis dashboard built with Python and Streamlit. It classifies text as **Positive**, **Negative**, or **Neutral** using Natural Language Processing (NLP) and presents the results through interactive data visualisations.
+**NikeSenti** is a portfolio-quality, AI-powered sentiment analysis dashboard built with Python and Streamlit. It classifies text as **Positive**, **Negative**, or **Neutral** using Natural Language Processing (NLP) and presents the results through interactive data visualisations.
 
 ---
 
